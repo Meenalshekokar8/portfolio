@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+
+</head>
+<body class="overflow-x-hidden font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
+
+    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
+        <img src="./images/header-bg-color.png" alt="" class="w-full">
+    </div>
+
+<!-- nav bar -->
+
+    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+
+        <img src="./images/logo1.png" alt="Logo" class="w-40 cursor-pointer mr-14 dark:hidden">
+        <img src="./images/logo_dark1.png" alt="Logo" class="w-40 cursor-pointer mr-14 hidden dark:block">
+
+        <ul class="hidden md:flex items-center gap-6 lg:gap-8 
+        rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo
+        dark:border dark:border-white/50 dark:bg-transparent">
+
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#exp">Experience</a></li>
+            <li><a href="#work">My Work</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+
+        <!-- icon moon sun -->
+
+        <div class="flex items-center gap-4">
+        <button onclick="toggleTheme()">
+            <img src="./images/moon_icon.png" alt="" class="w-6 dark:hidden">
+            <img src="./images/sun_icon.png" alt="" class="w-6 hidden dark:block">
+        </button>
+
+
+        <a href="#contact"
+        class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50">
+        Contact 
+            <img src="./images/arrow-icon.png" alt=""
+            class="w-3 dark:hidden">
+            <img src="./images/arrow-icon-dark.png" alt=""
+            class="w-3 hidden dark:block">
+        </a>
+
+            <button class="block md:hidden ml-3" onclick="openMenu()"> 
+                <img src="./images/menu-black.png" alt="" class="w-6 dark:hidden">
+                <img src="./images/menu-white.png" alt="" class="w-6 hidden dark:block">
+            </button>
+
+        </div>
+
+<!-- mobile menu -->
+
+        <ul id="sidemenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 
+        top-0 bottom-0 z-50 h-screen bg-green-50 transition duration-500 font-Ovo
+        dark:bg-DarkHover dark:text-white">
+
+        <div class="absolute right-6 top-6" onclick="closeMenu()">
+            <img src="./images/close-black.png" alt="" class="w-5 
+            cursor-pointer dark:hidden">
+            <img src="./images/close-white.png" alt="" class="w-5 
+            cursor-pointer hidden dark:block">
+        </div>
+
+            <li><a href="#top" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About Me</a></li>
+            <li><a href="#exp" onclick="closeMenu()">Experience</a></li>
+            <li><a href="#work" onclick="closeMenu()">My Work</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact Me</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- header -->
+
+    <div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+
+        <img src="./images/profilepicR.png" alt="" class="rounded-full w-32">
+        <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
+            Hi! I'm Meenal Shekokar 
+            <img src="./images/hand-icon.png" alt="" class="w-6"></h3>
+            <h1 class="text-3xl sm:text-6xl lg:text-[50px] font-Ovo">
+                Full Stack Web Developer</h1>
+            <p class="max-w-2xl mx-auto font-Ovo">
+                Currently Pursing MBA in Business Analytics. <br>
+                Graduate with an Information Technology Engineering Degree.<br> Currently working on Few Projects to enhance my skills.</p>
+
+               <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+                    <a href="#contact" class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#62A06A] to-[#AEE2F5] 
+                    text-white flex items-center gap-2 dark:border-transparent">
+                        Contact Me <img src="./images/right-arrow-white.png" alt="" class="w-4"></a>
+
+                        <a href="./images/MeenalResume.jpg" 
+                        class="px-10 py-3 border rounded-full border-gray-500 
+                        flex items-center gap-2 bg-white dark:text-black">
+                        My Resume <img src="./images/download-icon.png" alt="" class="w-4"></a>
+               </div>
+    </div>
+
+
+    <!-- about me -->
+
+    <div id="about" class="w-full px-[12%] py-10 scroll-m-20">
+        <h4 class="text-center mb-2 text-lg font-Ovo"> Introduction</h4>
+        <h2 class="text-center text-5xl font-Ovo">About Me</h2>
+
+        <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+            <!-- 1st col -->
+            <div class="max-w-max mx-auto relative">
+                <img src="./images/userimg.jpg" alt="" class="w-64 sm:80 
+                rounded-3xl max-w-none">
+
+                <div class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 
+                rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] 
+                flex items-center justify-center">
+                <img src="./images/inkpx-curved-text.png" alt="" class="w-full animate-spin_slow">
+                <img src="./images/dev-icon.png" alt="" class="w-1/4 absolute top-1/2
+                left-1/2 -translate-x-1/2 -translate-y-1/2">
+
+                </div>
+            </div>
+
+            <!-- 2nd col -->
+            <div class="flex-1">
+                <p class="mb-10 max-w-2xl font-Ovo">
+                    I'm currently pursing MBA in Business Analytics from Sinhagad Insitute and graduated with degree in Information Technology from Sipna College of Engineering and Technology, Amravati. During my studies, I developed a strong foundation in few Programming Languages. I implemented my skills in various Projects.
+                    I'm a quick learner, eager to know about new technologies and expand my knowledge.</p>
+           
+                    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+                        <li class="border-[0.5px] border-gray-400 rounded-xl p-6 
+                        cursor-pointer hover:bg-lightHover hover:-translate-y-1
+                        duration-500 hover:shadow-black 
+                        dark:border-white dark:hover:shadow-white dark:hover:bg-DarkHover/50
+                        "> 
+                            <img src="./images/code-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+                            <img src="./images/code-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+
+                            <h3 class="my-4 font-semibold text-gray-700
+                            dark:text-white">  Languages </h3>
+                            <p class="text-gray-600 text-sm dark:text-white/80"> 
+                                HTML, CSS, Bootstap, JavaScript, WordPress, Elementor, SEO, Plugins, Themes, PHP, and MySQL.</p>
+                        </li>
+
+                        <li class="border-[0.5px] border-gray-400 rounded-xl p-6 
+                        cursor-pointer hover:bg-lightHover hover:-translate-y-1
+                        duration-500 hover:shadow-black
+                        dark:border-white dark:hover:shadow-white dark:hover:bg-DarkHover/50
+                        "> 
+                            <img src="./images/edu-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+                            <img src="./images/edu-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+
+                            <h3 class="my-4 font-semibold text-gray-700 dark:text-white">  Education </h3>
+                            <p class="text-gray-600 text-sm dark:text-white/80"> MBA in Business Analytics. <br> B.E. in Information Technology.
+                                <br> Diploma in Computer Engineering.</p>
+                        </li>
+
+                        <li class="border-[0.5px] border-gray-400 rounded-xl p-6 
+                        cursor-pointer hover:bg-lightHover hover:-translate-y-1
+                        duration-500 hover:shadow-black
+                        dark:border-white dark:hover:shadow-white dark:hover:bg-DarkHover/50
+                        "> 
+                            <img src="./images/project-icon.png" alt="" class="w-7 mt-3 dark:hidden">
+                            <img src="./images/project-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+
+                            <h3 class="my-4 font-semibold text-gray-700 dark:text-white">  Projects </h3>
+                            <p class="text-gray-600 text-sm dark:text-white/80"> Currently Intern at GaoTek.inc in Web Content Uploading.  <br> Done Internship on Web Development at CodElevate Technology. <br>Built more than 5 Projects.</p>
+                        </li>
+
+                    </ul>
+
+<!-- icons tools-->
+                    <h4 class="my-3 text-gray-700 font-Ovo 
+                    dark:text-white/80">Tools I used :</h4>
+
+                    <ul class="flex items-center gap-3 sm:gap-5">
+                        <li class="flex items-center justify-center w-12 sm:w-14 
+                        aspect-square border border-gray-400 rounded-lg cursor-pointer
+                        hover:-translate-y-1 duration-500 hover:shadow-black dark:hover:shadow-white">
+                            <img src="./images/vscode.png" alt="" class="w-5 sm:w-7">
+                        </li>
+                    
+                        <li class="flex items-center justify-center w-12 sm:w-14 
+                        aspect-square border border-gray-400 rounded-lg cursor-pointer
+                        hover:-translate-y-1 duration-500 hover:shadow-black dark:hover:shadow-white">
+                            <img src="./images/sublime-text.png" alt="" class="w-5 sm:w-7">
+                        </li>
+                    
+                        <li class="flex items-center justify-center w-12 sm:w-14 
+                        aspect-square border border-gray-400 rounded-lg cursor-pointer
+                        hover:-translate-y-1 duration-500 hover:shadow-black dark:hover:shadow-white">
+                            <img src="./images/eclipse.png" alt="" class="w-5 sm:w-7">
+                        </li>
+                    
+                        <li class="flex items-center justify-center w-12 sm:w-14 
+                        aspect-square border border-gray-400 rounded-lg cursor-pointer
+                        hover:-translate-y-1 duration-500 hover:shadow-black dark:hover:shadow-white">
+                            <img src="./images/mysql.png" alt="" class="w-5 sm:w-7">
+                        </li>
+
+                        <li class="flex items-center justify-center w-12 sm:w-14 
+                        aspect-square border border-gray-400 rounded-lg cursor-pointer
+                        hover:-translate-y-1 duration-500 hover:shadow-black dark:hover:shadow-white">
+                            <img src="./images/git.png" alt="" class="w-5 sm:w-7">
+                        </li>
+                    </ul>
+                         
+                </div>
+        </div>
+    </div>
+
+
+<!-- Services -->
+
+<div id="exp" class="w-full px-[12%] py10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg font-Ovo"> Internship </h4>
+        <h2 class="text-center text-5xl font-Ovo">Experience</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo"> 2-Month Training and Internship </p>
+
+        <div class="grid grid-cols-auto gap-6 my-10">
+            <div class="border border-gray-400 rounded-lg px-8 py-12
+            hover:shadow-black cursor-pointer hover:bg-lightHover 
+            hover:-translate-y-1 duration-500
+            dark:hover:bg-DarkHover dark:hover:shadow-white
+            ">
+
+               <img src="./images/office-building.png" alt="" class="w-10"> 
+
+               <h3 class="text-lg my-4 text-gray-700 dark:text-white"> Company </h3>
+               <h5 class="text-sm my-4 text-gray-700 dark:text-white">CodElevate Technologies</h5>
+               <p class="text-sm text-grid-600 leading-5 dark:text-white/80">It is a premier training institute specializing in 
+                Full Stack Web Development and a variety of other cutting-edge technologies. </p>
+               <a href="https://www.linkedin.com/in/codelevatetechnologies/" class="flex items-center gap-2 text-sm mt-5">Read More <img src="./images/right-arrow.png" alt=""
+                class="w-4"></a>
+            </div>
+
+            <div class="border border-gray-400 rounded-lg px-8 py-12
+            hover:shadow-black cursor-pointer hover:bg-lightHover 
+            hover:-translate-y-1 duration-500
+            dark:hover:bg-DarkHover dark:hover:shadow-white
+            ">
+               <img src="./images/internship.png" alt="" class="w-10"> 
+               <h3 class="text-lg my-4 text-gray-700 dark:text-white"> Internship</h3>
+               <h5 class="text-sm my-4 text-gray-700 dark:text-white">Full Stack Web Developer</h5>
+               <p class="text-sm text-grid-600 leading-5 dark:text-white/80">Developed Real-Time projects like E-commerece Website, Inventory Management System, Online Alumni Portal and more.</p>
+               <a href="https://www.linkedin.com/in/codelevatetechnologies/" class="flex items-center gap-2 text-sm mt-5">Read More <img src="./images/right-arrow.png" alt=""
+                class="w-4"></a>
+            </div>
+
+            <div class="border border-gray-400 rounded-lg px-8 py-12
+            hover:shadow-black cursor-pointer hover:bg-lightHover 
+            hover:-translate-y-1 duration-500
+            dark:hover:bg-DarkHover dark:hover:shadow-white
+            ">
+               <img src="./images/code.png" alt="" class="w-10"> 
+               <h3 class="text-lg my-4 text-gray-700 dark:text-white"> Languages </h3>
+               <h5 class="text-sm my-4 text-gray-700 dark:text-white"> Learned and Implemented</h5>
+               <p class="text-sm text-grid-600 leading-5 dark:text-white/80">HTML, CSS, Bootstap, JavaScript,  jQuery, React.Js, Redux, PHP, MySQL, GitHub.</p>
+               <a href="https://www.linkedin.com/in/codelevatetechnologies/" class="flex items-center gap-2 text-sm mt-5">Read More <img src="./images/right-arrow.png" alt=""
+                class="w-4"></a>
+            </div>
+
+            <div class="border border-gray-400 rounded-lg px-8 py-12
+            hover:shadow-black cursor-pointer hover:bg-lightHover 
+            hover:-translate-y-1 duration-500
+            dark:hover:bg-DarkHover dark:hover:shadow-white
+            ">
+               <img src="./images/certificate.png" alt="" class="w-10"> 
+               <h3 class="text-lg my-4 text-gray-700 dark:text-white"> Certificate </h3>
+               <p class="text-sm text-grid-600 leading-5 dark:text-white/80"> 2-month Internship Certificate </p>
+        <br>
+                <a href="./images/Meenal Shekokar  Full Stack Certificate.jpg" 
+                class="px-10 py-3 border rounded-full border-gray-500 
+                flex items-center gap-2 bg-white dark:text-black">
+                Certificate <img src="./images/download-icon.png" alt="" class="w-4"></a>
+            </div>
+
+        </div>
+</div>
+
+
+<!-- My work -->
+
+<div id="work" class="w-full px-[12%] py10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg font-Ovo"> Projects </h4>
+        <h2 class="text-center text-5xl font-Ovo">My latest Work</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo"> Welcome to my Web Development Portfolio! 
+            Explore a collection of projects showcasing my expertise in front-end development.</p>
+
+            <div class="grid grid-cols-auto my-10 gap-5 dark:text-black">
+              <div class="aspect-square bg-[url('./images/work-1.png')] bg-no-repeat 
+              bg-cover bg-center rounded-lg relative cursor-pointer group">
+                
+              <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2
+              -translate-x-1/2 py-3 px-5 flex items-center justify-between
+              duration-500 group-hover:bottom-7"> 
+
+              <div>
+                <h2 class="font-semibold">Frontend Project</h2>
+                <p class="text-sm text-gray-700"> Potfolio </p>
+              </div>
+
+              <div class="border rounded-full border-black w-9 aspect-square
+              flex items-center justify-center shadow-[2px_2px_0_#000]
+               group-hover:bg-lime-100 transition">
+                <img src="./images/send-icon.png" alt="" class="w-5">
+              </div>
+
+              </div>
+
+                </div>
+<!-- 2 -->
+                <div class="aspect-square bg-[url('./images/work-2.png')] bg-no-repeat 
+              bg-cover bg-center rounded-lg relative cursor-pointer group">
+                
+              <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2
+              -translate-x-1/2 py-3 px-5 flex items-center justify-between
+              duration-500 group-hover:bottom-7"> 
+
+              <div>
+                <h2 class="font-semibold">Frontend Project</h2>
+                <p class="text-sm text-gray-700"> Algorithm Visualization</p>
+              </div>
+
+              <div class="border rounded-full border-black w-9 aspect-square
+              flex items-center justify-center shadow-[2px_2px_0_#000]
+               group-hover:bg-lime-100 transition">
+                <img src="./images/send-icon.png" alt="" class="w-5">
+              </div>
+
+              </div>
+
+                </div>
+<!-- 3 -->
+
+<div class="aspect-square bg-[url('./images/work-3.png')] bg-no-repeat 
+              bg-cover bg-center rounded-lg relative cursor-pointer group">
+                
+              <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2
+              -translate-x-1/2 py-3 px-5 flex items-center justify-between
+              duration-500 group-hover:bottom-7"> 
+
+              <div>
+                <h2 class="font-semibold">Full Stack Project</h2>
+                <p class="text-sm text-gray-700">Attendance Management</p>
+              </div>
+
+              <div class="border rounded-full border-black w-9 aspect-square
+              flex items-center justify-center shadow-[2px_2px_0_#000]
+               group-hover:bg-lime-100 transition">
+                <img src="./images/send-icon.png" alt="" class="w-5">
+              </div>
+
+              </div>
+
+                </div>
+
+                <!-- 4 -->
+
+                <div class="aspect-square bg-[url('./images/work-4.png')] bg-no-repeat 
+              bg-cover bg-center rounded-lg relative cursor-pointer group">
+                
+              <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2
+              -translate-x-1/2 py-3 px-5 flex items-center justify-between
+              duration-500 group-hover:bottom-7"> 
+
+              <div>
+                <h2 class="font-semibold">Full Stack Project</h2>
+                <p class="text-sm text-gray-700">E-Commerce Website</p>
+              </div>
+
+              <div class="border rounded-full border-black w-9 aspect-square
+              flex items-center justify-center shadow-[2px_2px_0_#000]
+               group-hover:bg-lime-100 transition">
+                <img src="./images/send-icon.png" alt="" class="w-5">
+
+              </div>
+
+              </div>
+
+                </div>
+
+            </div>
+
+         <a href="#" class="w-max flex items-center justify-center gap-2 text-gray-700
+                border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20
+                hover:bg-lightHover duration-500 font-Ovo 
+                dark:text-white dark:border-white dark:hover:bg-DarkHover">
+                 Show More <img src="./images/right-arrow-bold.png" alt="" class="w-4 dark:hidden">
+                 <img src="./images/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block"></a>
+                       
+</div>
+
+<!-- contact -->
+
+<div id="contact" class="w-full px-[12%] py-10 scroll-mt-20 
+bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center
+dark:bg-none
+">
+    <h4 class="text-center mb-2 text-lg font-Ovo"> Connect with me </h4>
+    <h2 class="text-center text-5xl font-Ovo"> Get in touch</h2>
+    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo"> I would love to hear from you! 
+        If you have any questions, feedback, comments, please use the form below.</p>
+
+        <form method="POST" action="https://api.web3forms.com/submit" class="max-w-2xl mx-auto">
+            <input type="hidden" name="access_key" value="c2c03c0f-b05f-46cc-b718-1320f9d3e6bb">
+
+            <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
+                <input type="text" placeholder="Enter your name" class="flex-1 p-3
+                outline-none border-[0.5px] border-gray-400 rounded-md bg-white 
+                dark:bg-DarkHover/30 dark:border-white/90 " required name="name">
+
+                <input type="email" placeholder="Enter your email" class="flex-1 p-3
+                outline-none border-[0.5px] border-gray-400 rounded-md bg-white
+                dark:bg-DarkHover/30 dark:border-white/90" required name="email">
+            </div>
+
+            <textarea rows="6" placeholder="Enter your message" class="w-full p-4
+            outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6
+            dark:bg-DarkHover/30 dark:border-white/90" required name="message"></textarea>
+
+            <button class="py-3 px-8 w-max flex items-center justify-between
+            gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 font-Ovo
+            dark:bg-transparent dark:border-[0.5px] dark:hover:bg-DarkHover
+            ">Submit Now
+                <img src="./images/right-arrow-white.png" alt="" class="w-4 dark:hidden">
+                <img src="./images/right-arrow-dark.png" alt="" class="w-4 hidden dark:block">
+            </button>
+        </form>
+
+</div>
+
+<!-- footer -->
+
+<div class="mt-20">
+    <div class="text-center">
+        <img src="./images/logo1.png" alt="" class="w-40 mx-auto mb-2 dark:hidden">
+        <img src="./images/logo_dark1.png" alt="" class="w-40 mx-auto mb-2 hidden dark:block">
+        
+        <div class="w-max flex items-center gap-2 mx-auto">
+            <img src="./images/mail_icon.png" alt="" class="w-6 dark:hidden">
+            <img src="./images/mail_icon_dark.png" alt="" class="w-6 hidden dark:block">
+            shekokarmeenal@gmail.com
+        </div>
+    </div>
+
+    <div class="text-center sm:flex items-center justify-between border-t
+     border-gray-400 mx-[10%] mt-12 py-6 font-Ovo">
+        <p>© 2024 Meenal Shekokar. All rights reserved.</p>
+        <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0 font-Ovo">
+            <li>
+                <a href="https://www.linkedin.com/in/meenalshekokar08/"> LinkedIn</a>
+            </li>
+            <li>
+                <a href="https://github.com/Meenalshekokar8"> GitHub</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
